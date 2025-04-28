@@ -1,6 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import HomeScreen from '../screens/HomeScreen';
 import AboutScreen from '../screens/AboutScreen';
 import ServiceScreen from '../screens/ServiceScreen';
@@ -20,12 +20,12 @@ const AppNavigator = () => {
           //QUANDO ESTIVER SELECIONADO ESTARÁ PREENCHIDO, CASO NÃO ESTARÁ OUTLINE
           if (route.name === 'Home') {
             iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'About') {
+          } else if (route.name === 'Sobre') {
             iconName = focused ? 'information-circle' : 'information-circle-outline';
-          } else if (route.name === 'Service') {
-            iconName = focused ? 'bag' : 'bag-outline';
-          } else if (route.name === 'Contacts') {
-            iconName = focused ? 'mail' : 'mail-outline';
+          } else if (route.name === 'Contatos') {
+            iconName = focused ? 'link' : 'link-outline';
+          } else if (route.name === 'Empresas') {
+            iconName = focused ? 'business' : 'business-outline';
           }
 
           return <Ionicons name={iconName} size={size} color={color} />;
@@ -36,9 +36,9 @@ const AppNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="About" component={AboutScreen} />
-      <Tab.Screen name="Contacts" component={ContactScreen} />
-      <Tab.Screen name="Service" component={ServiceScreen} />
+      <Tab.Screen name="Sobre" component={AboutScreen} />
+      <Tab.Screen name="Empresas" component={ContactScreen} />
+      <Tab.Screen name="Contatos" component={ServiceScreen} />
       
     </Tab.Navigator>
   );
